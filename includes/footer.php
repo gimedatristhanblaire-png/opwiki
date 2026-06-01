@@ -9,7 +9,7 @@
         <a href="<?php echo BASE_URL; ?>wiki/"><span class="nav-icon">📖</span>Wiki</a>
         <a href="<?php echo BASE_URL; ?>theories/"><span class="nav-icon">💭</span>Theories</a>
         <a href="<?php echo BASE_URL; ?>lore/"><span class="nav-icon">📚</span>Lore</a>
-        <a href="<?php echo BASE_URL; ?>lore/"><span class="nav-icon">📜</span>History</a>
+        <a href="<?php echo BASE_URL; ?>lore/browse.php?type=timeline"><span class="nav-icon">📜</span>History</a>
     </nav>
 
     <!-- Toast Container -->
@@ -182,6 +182,96 @@ function showToast(msg) {
     toast.textContent = msg;
     container.appendChild(toast);
     setTimeout(function() { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 3500);
+}
+
+// --- Like Toggle ---
+function toggleLike(btn) {
+    var type = btn.getAttribute('data-type');
+    var id = btn.getAttribute('data-id');
+    if (!type || !id) return;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '<?php echo BASE_URL; ?>ajax/like.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var res = JSON.parse(xhr.responseText);
+            var countSpan = btn.querySelector('.like-count');
+            if (countSpan) countSpan.textContent = res.count;
+            if (res.liked) {
+                btn.classList.add('liked');
+                btn.innerHTML = '★ <span class="like-count">' + res.count + '</span>';
+            } else {
+                btn.classList.remove('liked');
+                btn.innerHTML = '☆ <span class="like-count">' + res.count + '</span>';
+            }
+        } else if (xhr.status === 401) {
+            showToast('Please login to like');
+        } else {
+            showToast('Error toggling like');
+        }
+    };
+    xhr.onerror = function() { showToast('Network error'); };
+    xhr.send('type=' + encodeURIComponent(type) + '&id=' + encodeURIComponent(id));
+}
+
+// --- Bookmark Toggle ---
+function toggleBookmark(btn) {
+    var type = btn.getAttribute('data-type');
+    var id = btn.getAttribute('data-id');
+    if (!type || !id) return;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '<?php echo BASE_URL; ?>ajax/bookmark.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var res = JSON.parse(xhr.responseText);
+            var span = btn.querySelector('span');
+            if (res.bookmarked) {
+                btn.classList.add('bookmarked');
+                if (span) span.textContent = 'Bookmarked';
+            } else {
+                btn.classList.remove('bookmarked');
+                if (span) span.textContent = 'Bookmark';
+            }
+        } else if (xhr.status === 401) {
+            showToast('Please login to bookmark');
+        } else {
+            showToast('Error toggling bookmark');
+        }
+    };
+    xhr.onerror = function() { showToast('Network error'); };
+    xhr.send('type=' + encodeURIComponent(type) + '&id=' + encodeURIComponent(id));
+}
+
+// --- Vote Theory ---
+function voteTheory(btn) {
+    var theoryId = btn.getAttribute('data-theory-id');
+    var vote = btn.getAttribute('data-vote');
+    if (!theoryId || !vote) return;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '<?php echo BASE_URL; ?>ajax/vote.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var res = JSON.parse(xhr.responseText);
+            var scoreEl = document.getElementById('score-' + theoryId);
+            if (scoreEl) scoreEl.textContent = res.score;
+            var upBtn = document.querySelector('.vote-btn.up[data-theory-id="' + theoryId + '"]');
+            var downBtn = document.querySelector('.vote-btn.down[data-theory-id="' + theoryId + '"]');
+            if (upBtn && downBtn) {
+                upBtn.classList.remove('active');
+                downBtn.classList.remove('active');
+                if (res.vote === 'up') upBtn.classList.add('active');
+                if (res.vote === 'down') downBtn.classList.add('active');
+            }
+        } else if (xhr.status === 401) {
+            showToast('Please login to vote');
+        } else {
+            showToast('Error voting');
+        }
+    };
+    xhr.onerror = function() { showToast('Network error'); };
+    xhr.send('theory_id=' + encodeURIComponent(theoryId) + '&vote=' + encodeURIComponent(vote));
 }
 
 // --- Ambient Audio ---

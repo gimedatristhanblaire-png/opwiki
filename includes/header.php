@@ -22,7 +22,6 @@ if (!defined('BASE_URL')) {
     <meta name="twitter:title" content="<?php echo isset($page_title) ? htmlspecialchars($page_title) . ' | ' : ''; ?>OPWiki">
     <meta name="twitter:description" content="<?php echo isset($meta_description) ? htmlspecialchars($meta_description) : 'OPWiki - A community wiki exploring One Piece topics, theories, and knowledge.'; ?>">
     <link rel="icon" type="image/svg+xml" href="<?php echo BASE_URL; ?>favicon.svg">
-    <link rel="alternate icon" href="<?php echo BASE_URL; ?>favicon.ico">
     <link rel="canonical" href="<?php echo (isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'?'https':'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
     <link rel="alternate" type="application/rss+xml" title="OPWiki RSS Feed" href="<?php echo BASE_URL; ?>rss.php">
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) . ' | ' : ''; ?>OPWiki</title>
@@ -32,7 +31,7 @@ if (!defined('BASE_URL')) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Pirata+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css">
-    <script defer src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
     tinymce.init({
         selector: 'textarea.wysiwyg',

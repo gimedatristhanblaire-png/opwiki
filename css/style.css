@@ -773,6 +773,7 @@ body.light-mode .dark-switch input:checked + .slider::after { content: '🌙'; l
   transition: all var(--transition);
 }
 .btn-sm:hover { background: var(--gold); color: var(--ocean); }
+.btn-sm.liked { background: rgba(212,168,67,0.12); color: var(--gold); border-color: var(--gold); }
 
 /* Parchment Card Theme */
 .parchment-card {
@@ -3541,6 +3542,8 @@ body.light-mode .article-hero-meta a:first-of-type {
 }
 .ai-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(212,168,67,0.05); }
 .ai-btn.liked { background: rgba(212,168,67,0.12); color: var(--gold); border-color: var(--gold); }
+@keyframes like-pop { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+.ai-btn.liked .like-count, .btn-sm.liked .like-count { animation: like-pop 0.3s ease; }
 .ai-btn.bookmarked { border-color: var(--ocean-surface); color: var(--ocean-surface); }
 .ai-btn-share {
   margin-left: auto;
