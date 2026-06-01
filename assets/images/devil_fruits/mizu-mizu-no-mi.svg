@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="fruitGrad" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" style="stop-color:#5dade2"/>
+      <stop offset="60%" style="stop-color:#2e86c1"/>
+      <stop offset="100%" style="stop-color:#1a5276"/>
+    </radialGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+  </defs>
+  <!-- shadow -->
+  <ellipse cx="155" cy="270" rx="80" ry="15" fill="#00000033"/>
+  <!-- fruit body -->
+  <ellipse cx="145" cy="160" rx="90" ry="100" fill="url(#fruitGrad)"/>
+  <!-- swirl pattern -->
+  <path d="M120 120 Q140 100 160 110 Q180 120 175 145 Q170 170 145 175 Q120 180 115 155 Q110 130 135 125" fill="none" stroke="#85c1e9" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M170 140 Q190 130 200 150 Q210 170 195 185 Q180 200 160 195" fill="none" stroke="#85c1e9" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- stem -->
+  <path d="M140 65 Q140 40 145 30 Q150 20 155 25" fill="none" stroke="url(#stemGrad)" stroke-width="6" stroke-linecap="round"/>
+  <!-- small leaf -->
+  <path d="M148 35 Q165 30 170 45 Q160 48 148 35" fill="#2ecc71" stroke="#1e8449" stroke-width="1"/>
+  <!-- water droplets -->
+  <circle cx="130" cy="130" r="4" fill="#aed6f1" opacity="0.8"/>
+  <circle cx="175" cy="170" r="3" fill="#aed6f1" opacity="0.6"/>
+  <circle cx="145" cy="190" r="5" fill="#aed6f1" opacity="0.5"/>
+  <circle cx="165" cy="120" r="3" fill="#aed6f1" opacity="0.7"/>
+</svg>

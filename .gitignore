@@ -1,0 +1,14 @@
+# Server config (contains DB credentials — don't commit)
+config/config.php
+
+# User uploads
+uploads/
+
+# OS files
+Thumbs.db
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
