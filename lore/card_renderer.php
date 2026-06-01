@@ -36,7 +36,7 @@ function render_meter($label, $value, $max = 100, $color = '#D4A843', $icon = ''
 }
 
 function render_danger_meter($level) {
-    $map = ['Emperor'=>['🔥',95,'#C62828'],'Legendary'=>['⚡',85,'#E65100'],'Warlord'=>['⚔️',70,'#D4A843'],'High'=>['⚠️',55,'#F57F17'],'Moderate'=>['●',35,'#2E7D32'],'Low'=>['○',15,'#00838F'],'Pet'=>['🐾',5,'#90CAF9'],'Minimal'=>['○',5,'#90CAF9'],'Harmless'=>['○',5,'#81C784'],'Normal'=>['●',20,'#78909C'],'Critical'=>['☠️',90,'#6A1B9A'],'Catastrophic'=>['💀',98,'#B71C1C'],'Dangerous'=>['⚡',75,'#D84315']];
+    $map = ['Emperor'=>['🔥',95,'#C62828'],'Legendary'=>['⚡',85,'#E65100'],'Warlord'=>['⚔️',70,'#D4A843'],'Admiral'=>['⚓',75,'#1A237E'],'High'=>['⚠️',55,'#F57F17'],'Moderate'=>['●',35,'#2E7D32'],'Low'=>['○',15,'#00838F'],'Pet'=>['🐾',5,'#90CAF9'],'Minimal'=>['○',5,'#90CAF9'],'Harmless'=>['○',5,'#81C784'],'Normal'=>['●',20,'#78909C'],'Critical'=>['☠️',90,'#6A1B9A'],'Catastrophic'=>['💀',98,'#B71C1C'],'Dangerous'=>['⚡',75,'#D84315']];
     $m = $map[$level] ?? ['●',20,'#78909C'];
     return render_meter('Danger Level', $m[1], 100, $m[2], $m[0]);
 }
@@ -94,6 +94,7 @@ function render_character_card($c, $conn) {
     if ($danger === 'Emperor') $h .= '<div class="wanted-emperor-badge">EMPEROR</div>';
     elseif ($danger === 'Legendary') $h .= '<div class="wanted-legendary-badge">LEGENDARY</div>';
     elseif ($danger === 'Warlord') $h .= '<div class="wanted-warlord-badge">WARLORD</div>';
+    elseif ($danger === 'Admiral') $h .= '<div class="wanted-admiral-badge">ADMIRAL</div>';
     $h .= '<div class="wanted-image">
               <div class="wanted-image-frame">
                   <img src="' . $img . '" alt="' . $name . '" loading="lazy">
@@ -232,7 +233,7 @@ function render_arc_card($arc) {
         $img = (strpos($raw, 'http') === 0 || strpos($raw, '/') === 0) ? htmlspecialchars($raw) : BASE_URL . htmlspecialchars($raw);
     }
 
-    $imp_badges = ['Legendary'=>'🔥','Critical'=>'⚡','High'=>'●','Normal'=>'○'];
+    $imp_badges = ['Legendary'=>'🔥','Critical'=>'⚡','Admiral'=>'⚓','High'=>'●','Normal'=>'○'];
     $imp_icon = $imp_badges[$lore_imp] ?? '○';
 
     $h = '<div class="lore-card-v2 lore-card-arc">';

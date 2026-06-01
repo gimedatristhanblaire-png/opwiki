@@ -1584,7 +1584,7 @@ body.light-mode .wanted-poster {
   .footer-columns { grid-template-columns: 1fr; gap: 16px; text-align: center; }
   .char-day-image img { width: 72px; height: 72px; }
   .wanted-sub { font-size: 0.5rem; }
-  .wanted-emperor-badge, .wanted-dead-badge, .badge { font-size: 0.45rem; padding: 1px 5px; }
+  .wanted-emperor-badge, .wanted-admiral-badge, .wanted-dead-badge, .badge { font-size: 0.45rem; padding: 1px 5px; }
   .saga-card-arcs { font-size: 0.6rem; }
   .lore-meter-label { font-size: 0.55rem; }
   .gl-comment-btn { font-size: 0.65rem; }
@@ -2465,7 +2465,7 @@ body.light-mode .wanted-affil {
 .bounty-normal .bounty-shine { font-size: 1rem; }
 
 /* Emperor / Legendary / Warlord Badges */
-.wanted-emperor-badge, .wanted-legendary-badge, .wanted-warlord-badge {
+.wanted-emperor-badge, .wanted-legendary-badge, .wanted-warlord-badge, .wanted-admiral-badge {
   position: absolute;
   top: 60px;
   right: 6px;
@@ -2492,6 +2492,12 @@ body.light-mode .wanted-affil {
   background: linear-gradient(135deg, #2E7D32, #1B5E20);
   color: #fff;
   border: 1px solid var(--gold-light);
+}
+.wanted-admiral-badge {
+  background: linear-gradient(135deg, #1A237E, #283593);
+  color: #fff;
+  border: 1px solid #90CAF9;
+  box-shadow: 0 0 10px rgba(26,35,126,0.4);
 }
 
 /* Alias & Position */
