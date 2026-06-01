@@ -8592,6 +8592,12 @@ body:not(.light-mode) textarea:focus {
   border-color: #F5C518;
   box-shadow: 0 0 12px rgba(245,197,24,0.15);
 }
+body:not(.light-mode) .pf-input,
+body:not(.light-mode) .pf-select {
+  background: rgba(255,248,231,0.85);
+  color: #3D2B1F;
+}
+body:not(.light-mode) .pf-input::placeholder { color: #B8A88A; }
 
 /* --- Footer dark mode override --- */
 body:not(.light-mode) footer {

@@ -60,8 +60,8 @@ if (!$is_current_user_admin) {
 }
 
 $Parsedown = new Parsedown();
-$from_content = $Parsedown->text(htmlspecialchars($from['content']));
-$to_content = $Parsedown->text(htmlspecialchars($to['content']));
+$from_content = $Parsedown->text($from['content']);
+$to_content = $Parsedown->text($to['content']);
 ?>
 
 <section id="revision-diff">

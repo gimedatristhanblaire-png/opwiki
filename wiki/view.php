@@ -226,7 +226,7 @@ if ($article_data) {
             <?php
             require_once __DIR__ . '/../includes/Parsedown.php';
             $Parsedown = new Parsedown();
-            $rendered = $Parsedown->text(htmlspecialchars($article_data['content']));
+            $rendered = $Parsedown->text($article_data['content']);
             $rendered = render_lore_callouts($rendered);
             preg_match_all('/<h2[^>]*>(.*?)<\/h2>/i', $rendered, $h2s);
             preg_match_all('/<h3[^>]*>(.*?)<\/h3>/i', $rendered, $h3s);

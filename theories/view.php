@@ -164,7 +164,7 @@ if ($theory_id) {
                 <?php
                 require_once __DIR__ . '/../includes/Parsedown.php';
                 $Parsedown = new Parsedown();
-                $rendered = $Parsedown->text(htmlspecialchars($theory_data['content']));
+                $rendered = $Parsedown->text($theory_data['content']);
                 $rendered = render_theory_blocks($rendered);
                 $rendered = render_manga_blocks($rendered);
                 $rendered = render_lore_callouts($rendered);

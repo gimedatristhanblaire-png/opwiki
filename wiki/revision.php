@@ -64,7 +64,7 @@ if (!$is_current_user_admin) {
             <?php
             require_once __DIR__ . '/../includes/Parsedown.php';
             $Parsedown = new Parsedown();
-            echo $Parsedown->text(htmlspecialchars($revision['content']));
+            echo $Parsedown->text($revision['content']);
             ?>
         </div>
         <p><a href="<?php echo BASE_URL; ?>wiki/revisions.php?article_id=<?php echo $revision['article_id']; ?>">&laquo; Back to Revision History</a></p>
