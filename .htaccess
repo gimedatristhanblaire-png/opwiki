@@ -5,9 +5,9 @@ RewriteEngine On
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # Custom error pages
-ErrorDocument 403 /opwiki/error.php?code=403
-ErrorDocument 404 /opwiki/error.php?code=404
-ErrorDocument 500 /opwiki/error.php?code=500
+ErrorDocument 403 /error.php?code=403
+ErrorDocument 404 /error.php?code=404
+ErrorDocument 500 /error.php?code=500
 
 # Block access to sensitive directories
 RewriteRule ^includes/ - [F,L]
