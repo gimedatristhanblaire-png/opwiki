@@ -1537,7 +1537,7 @@ body.light-mode .wanted-poster {
 }
 @media (max-width: 768px) {
   .header-inner { flex-wrap: wrap; }
-  #nav-toggle { display: block; }
+  #nav-toggle { display: block; margin-left: auto; }
   nav {
     width: 100%;
     display: none;
@@ -8599,6 +8599,15 @@ body:not(.light-mode) .pf-select {
   color: #3D2B1F;
 }
 body:not(.light-mode) .pf-input::placeholder { color: #B8A88A; }
+body:not(.light-mode) .wanted-recruit-card,
+body:not(.light-mode) .wanted-recruit-card .wr-title,
+body:not(.light-mode) .wanted-recruit-card .pf-label,
+body:not(.light-mode) .wanted-recruit-card .wr-subtitle,
+body:not(.light-mode) .wanted-recruit-card .wr-wanted-line1,
+body:not(.light-mode) .wanted-recruit-card .wr-avatar-hint,
+body:not(.light-mode) .wanted-recruit-card .wr-footer-stamp {
+  color: #3D2B1F;
+}
 
 /* --- Footer dark mode override --- */
 body:not(.light-mode) footer {
