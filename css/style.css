@@ -5507,7 +5507,12 @@ body.light-mode .search-input { background: #FFF8E7; color: #3D2B1F; }
   color: var(--text);
   font-size: 0.9rem;
 }
+.search-select option {
+  background: #fff;
+  color: #222;
+}
 body.light-mode .search-select { background: #FFF8E7; color: #3D2B1F; }
+body.light-mode .search-select option { background: #FFF8E7; color: #3D2B1F; }
 .search-hint {
   color: #8B7355;
 }
@@ -8597,6 +8602,8 @@ body:not(.light-mode) select {
   border-color: rgba(255,255,255,0.1);
   color: #F5F1E8;
 }
+select option { background: #fff; color: #222; }
+body:not(.light-mode) select option { background: #1a1a2e; color: #e0e0e0; }
 body:not(.light-mode) input:focus,
 body:not(.light-mode) textarea:focus {
   border-color: #F5C518;
