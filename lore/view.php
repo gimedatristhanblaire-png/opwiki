@@ -57,7 +57,7 @@ $e = function($col) use ($item) { return htmlspecialchars($item[$col] ?? ''); };
             <!-- Card Column -->
             <div class="lore-detail-card">
                 <?php echo render_lore_card($item, $type, $conn); ?>
-                <script>document.querySelector('.lore-card-v2')?.classList.add('expanded');</script>
+
             </div>
 
             <!-- Content Column -->
