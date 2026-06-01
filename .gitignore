@@ -10,6 +10,15 @@ Thumbs.db
 *.log
 cookies.txt
 
+# Temp / diagnostic files
+dbcheck*.php
+dbimport*.php
+import*.php
+test*.php
+unzip*.php
+*_clean.sql
+opwiki_db_clean.sql
+
 # IDE
 .vscode/
 .idea/

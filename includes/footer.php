@@ -199,6 +199,7 @@ function showToast(msg) {
                 source = audioCtx.createBufferSource();
                 playNoise();
             }
+            if (audioCtx.state === 'suspended') audioCtx.resume();
             btn.classList.add('playing');
             btn.textContent = '🔇';
             playing = true;
