@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A237E"/>
+      <stop offset="100%" style="stop-color:#424ba6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#bg)"/>
+  <text x="200" y="200" text-anchor="middle" dominant-baseline="central" font-family="Arial,Impact,sans-serif" font-weight="700" font-size="120px" fill="#C5CAE9">Y</text>
+  <text x="200" y="340" text-anchor="middle" font-family="Arial,sans-serif" font-size="24px" fill="rgba(255,255,255,0.6)">Yamato</text>
+</svg>
