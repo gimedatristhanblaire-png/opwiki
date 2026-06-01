@@ -8,6 +8,7 @@ uploads/
 Thumbs.db
 .DS_Store
 *.log
+cookies.txt
 
 # IDE
 .vscode/

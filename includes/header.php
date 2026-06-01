@@ -21,6 +21,8 @@ if (!defined('BASE_URL')) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo isset($page_title) ? htmlspecialchars($page_title) . ' | ' : ''; ?>OPWiki">
     <meta name="twitter:description" content="<?php echo isset($meta_description) ? htmlspecialchars($meta_description) : 'OPWiki - A community wiki exploring One Piece topics, theories, and knowledge.'; ?>">
+    <link rel="icon" type="image/svg+xml" href="<?php echo BASE_URL; ?>favicon.svg">
+    <link rel="alternate icon" href="<?php echo BASE_URL; ?>favicon.ico">
     <link rel="canonical" href="<?php echo (isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'?'https':'http').'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
     <link rel="alternate" type="application/rss+xml" title="OPWiki RSS Feed" href="<?php echo BASE_URL; ?>rss.php">
     <title><?php echo isset($page_title) ? htmlspecialchars($page_title) . ' | ' : ''; ?>OPWiki</title>
